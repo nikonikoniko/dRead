@@ -1,10 +1,15 @@
 (require '[lumo.build.api :as b])
 
 (b/watch "src"
-         {:main 'read.core
+         {:main 'dread.core
           :output-to "watch/main.js"
+          :output-dir "watch"
+          :optimizations :none
           :verbose true
-          :foreign-libs [{:file "src"
+          :cache-analysis false
+          :aot-cache false
+          :recompile-dependents false
+          :foreign-libs [{:file "src/js"
                           :module-type :es6}]
           :watch-fn (fn [] (println "Updated build"))
           :target :nodejs})

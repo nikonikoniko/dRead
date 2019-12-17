@@ -5,9 +5,9 @@
   "main": "out/main.js",
   "scripts": {
     "test": "huhu",
-    "dev": "lumo -c src lumo/watch.cljs",
+    "dev": "lumo -c `clj -Spath` lumo/watch.cljs",
     "run": "node watch/main.js",
-    "build": "lumo -c sec lumo/build.cljs"
+    "build": "lumo -c `clj -Spath` lumo/build.cljs"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,8 @@
   "author": "niko@niko.io",
   "license": "GPLv3",
   "dependencies": {
+    "@cljs-oss/module-deps": "^1.1.1",
+    "andare": "^0.12.0",
     "cowsay": "^1.4.0",
     "lumo-cljs": "^1.10.1"
   }
