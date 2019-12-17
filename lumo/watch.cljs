@@ -10,3 +10,4 @@
           :target :nodejs})
           ;; :npm-deps {:cowsay "1.4.0"}})
           ;; seems like it might not be necessary?
+          ;; and lumo just automatically reads node_modules or package.json?
