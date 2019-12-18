@@ -1,7 +1,7 @@
 out/*
 watch/*
-public/js/*
-dist/*
+_public/js/*
+_dist/*
 .shadow-cljs/*
 
 ### Python template

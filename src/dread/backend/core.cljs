@@ -5,13 +5,15 @@
             [cljs.core.async
              :refer [go put! chan <! >!]]))
 
-
-;; (a/disable-reload!)
-
 (nodejs/enable-util-print!)
 
 (defn saySomething []
-  (println (say (js-obj "text" "Hellooooooo good wooooorld"))))
+  (println (say (js-obj "text" "Hellooooooo good wooooorld")))
+  (hello/sayHello)
+  (def bigData (js->clj (js/JSON.parse "{\"haha\": \"hihu\"}") :keywordize-keys true))
+  (println bigData)
+  (println (:haha bigData))
+  (println (get bigData :haha)))
 
 
 (def warehouse-capacity 10)
