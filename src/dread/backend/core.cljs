@@ -1,21 +1,20 @@
-(ns dread.core
+(ns dread.backend.core
   (:require [cljs.nodejs :as nodejs]
-            [hello :as hello]
+            ["../js/hello" :as hello]
             [cowsay :refer [say]]
             [cljs.core.async
-             :as a
-             :refer [go put! chan <!]]))
+             :refer [go put! chan <! >!]]))
+
 
 ;; (a/disable-reload!)
 
 (nodejs/enable-util-print!)
 
-(println (say (js-obj "text" "Hellooooooo good wooooorld")))
+(defn saySomething []
+  (println (say (js-obj "text" "Hellooooooo good wooooorld"))))
 
-(set! *main-cli-fn* -main)
 
 (def warehouse-capacity 10)
-
 
 (def warehouse-channel (chan warehouse-capacity))
 
@@ -37,3 +36,5 @@
 
 (defn -main [& args]
   (hello/sayHello))
+
+(set! *main-cli-fn* -main)

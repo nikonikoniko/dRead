@@ -1,5 +1,8 @@
 out/*
 watch/*
+public/js/*
+dist/*
+.shadow-cljs/*
 
 ### Python template
 # Byte-compiled / optimized / DLL files

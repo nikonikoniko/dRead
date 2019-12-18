@@ -8,6 +8,7 @@
           :verbose true
           :cache-analysis false
           :aot-cache false
+          :optimize-constants false
           :recompile-dependents false
           :foreign-libs [{:file "src/js"
                           :module-type :es6}]

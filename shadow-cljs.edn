@@ -1,0 +1,14 @@
+;; shadow-cljs configuration
+{:source-paths ["src"]
+ :dependencies [
+                [org.clojure/core.async "0.6.532"]]
+ :dev-http {8080 "public"}
+ :builds {
+          :frontend {
+                     :target :browser
+                     :modules {:main {:init-fn dread.frontend.app/init}}}
+          :backend {
+                    :target :node-library
+                    :modules {:main {:init-dn dread.backend.core/main}}
+                    :output-to "dist/index.js"
+                    :exports-fn dread.backend.core/saySomething}}}
