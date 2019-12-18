@@ -8,9 +8,9 @@
 (nodejs/enable-util-print!)
 
 (defn saySomething []
-  (println (say (js-obj "text" "Hellooooooo good wooooorld")))
+  (println (say (clj->js {:text "Hellooooooo good wooooorld"})))
   (hello/sayHello)
-  (def bigData (js->clj (js/JSON.parse "{\"haha\": \"hihu\"}") :keywordize-keys true))
+  (def bigData (js->clj (.parse js/JSON "{\"haha\": \"hihu\"}") :keywordize-keys true))
   (println bigData)
   (println (:haha bigData))
   (println (get bigData :haha)))
